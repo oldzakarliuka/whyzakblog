@@ -83,8 +83,8 @@ test:
 #
 production:
   <<: *default
-  database: dfpogbm0f804s5
-  host: ec2-54-73-253-140.eu-west-1.compute.amazonaws.com
-  port: 5432
-  username: hhxqegitilzuij
-  password: f0c385a84f5ddad3397d285e4755a6fb3923bb05cb82e1393921490a7edf9d0c
+  database: <%= ENV['DATABASE_DB'] %>
+  host: <%= ENV['DATABASE_HOST'] %>
+  port: <%= ENV['DATABASE_PORT'] %>
+  username: <%= ENV['DATABASE_USERNAME'] %>
+  password: <%= ENV['DATABASE_PWD'] %>
