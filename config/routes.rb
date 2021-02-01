@@ -5,14 +5,14 @@ Rails.application.routes.draw do
       get 'post/:postId', action: :get_post
       post 'post/create', action: :create
       delete 'post/:postId', action: :delete
-      patch 'post/update', action: :update
+      post 'post/update', action: :update
     end
 
     controller :user do
       post 'auth/signin', action: :signin
       post 'auth/signup', action: :signup
-      post 'auth/signout', action: :signout
-      
+      # post 'auth/signout', action: :signout
+
       get 'user/me', action: :me
     end
   end
