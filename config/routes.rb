@@ -1,3 +1,21 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  namespace :v1 do
+    controller :posts do
+      get 'post', action: :all
+      get 'post/:postId', action: :get_post
+      post 'post/create', action: :create
+      delete 'post/:postId', action: :delete
+      patch 'post/update', action: :update
+    end
+
+    controller :user do
+      post 'auth/signin', action: :signin
+      post 'auth/signup', action: :signup
+      post 'auth/signout', action: :signout
+      
+      get 'user/me', action: :me
+    end
+  end
+  get '*', to: 'static#index'
+  
 end

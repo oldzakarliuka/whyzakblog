@@ -1,0 +1,12 @@
+POST
+get / - ?limit&offest - все посты done
+get /:postId - пост по id
+post /create - создать посты
+delete /delete:postId - удалить пост по id
+patch /update - обновить пост по id
+
+USER / ADMIN
+post /signup - регистрация
+post /signin - авторизация
+post /signout - выход из учетки
+get /me - данные о пользовате

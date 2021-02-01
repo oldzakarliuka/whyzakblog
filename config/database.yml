@@ -17,15 +17,15 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  host: ec2-54-73-253-140.eu-west-1.compute.amazonaws.com
-  port: 5432
-  username: hhxqegitilzuij
-  password: f0c385a84f5ddad3397d285e4755a6fb3923bb05cb82e1393921490a7edf9d0c
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
 development:
   <<: *default
-  database: dfpogbm0f804s5
+  database: blog
+  host: localhost
+  port: 5432
+  username: postgres
+  password: root
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -84,3 +84,7 @@ test:
 production:
   <<: *default
   database: dfpogbm0f804s5
+  host: ec2-54-73-253-140.eu-west-1.compute.amazonaws.com
+  port: 5432
+  username: hhxqegitilzuij
+  password: f0c385a84f5ddad3397d285e4755a6fb3923bb05cb82e1393921490a7edf9d0c
