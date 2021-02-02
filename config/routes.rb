@@ -16,6 +16,4 @@ Rails.application.routes.draw do
       get 'user/me', action: :me
     end
   end
-  get '*', to: 'static#index'
-  
 end
