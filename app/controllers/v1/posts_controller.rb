@@ -1,7 +1,7 @@
 class V1::PostsController < ApplicationController
     before_action :authorized, only: [:create, :update, :delete]
     def all
-        render json: Post.all.limit(params[:limit] || 25).offset(params[:offset] || 0), status: :ok
+        render json: Post.all.reverse_order.limit(params[:limit] || 25).offset(params[:offset] || 0), status: :ok
     end
 
     def get_post
